@@ -8,12 +8,27 @@ const CryptoForm = () => {
     value: "",
   });
 
+  const [nameValue, setNameValue] = useState({
+    name: "",
+    value: "",
+  });
+
+  const reset = (event) => {
+    event.target.value = " ";
+  };
+
   return (
     <div className="crypto-form">
       <form
         onSubmit={(e) => {
           e.preventDefault();
           console.log(cryptoItem);
+          setNameValue((prev) => ({
+            ...prev,
+            name: cryptoItem.name,
+            value: cryptoItem.value,
+          }));
+          reset();
         }}
       >
         <div>
@@ -44,7 +59,7 @@ const CryptoForm = () => {
           Submit
         </button>
       </form>
-      <CryptoListItem name={cryptoItem.name} value={`${cryptoItem.value}$`} />
+      <CryptoListItem name={nameValue.name} value={`${nameValue.value}$`} />
     </div>
   );
 };
