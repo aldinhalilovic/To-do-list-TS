@@ -1,0 +1,10 @@
+.list-item {
+    width: 600px;
+    height: 30px;
+    margin-top: 150px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: grey;
+
+}
