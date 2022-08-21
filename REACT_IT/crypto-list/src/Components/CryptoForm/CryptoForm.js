@@ -4,18 +4,16 @@ import "./CryptoForm.css";
 
 const CryptoForm = () => {
   const [cryptoItem, setCryptoItem] = useState({
+    id: 1,
     name: "",
     value: "",
   });
 
   const [nameValue, setNameValue] = useState({
+    id: cryptoItem.id,
     name: "",
     value: "",
   });
-
-  const reset = (event) => {
-    event.target.value = " ";
-  };
 
   return (
     <div className="crypto-form">
@@ -26,9 +24,14 @@ const CryptoForm = () => {
           setNameValue((prev) => ({
             ...prev,
             name: cryptoItem.name,
-            value: cryptoItem.value,
+            value: +cryptoItem.value,
           }));
-          reset();
+          setCryptoItem((prev) => ({
+            ...prev,
+            name: "",
+            value: +"",
+          }));
+          console.log(nameValue);
         }}
       >
         <div>
@@ -49,7 +52,7 @@ const CryptoForm = () => {
             type={"text"}
             placeholder="Value"
             className="value"
-            value={cryptoItem.value}
+            value={+cryptoItem.value}
             onChange={(e) =>
               setCryptoItem((prev) => ({ ...prev, value: e.target.value }))
             }
@@ -59,7 +62,7 @@ const CryptoForm = () => {
           Submit
         </button>
       </form>
-      <CryptoListItem name={nameValue.name} value={`${nameValue.value}$`} />
+      <CryptoListItem name={nameValue.name} value={`${+nameValue.value}$`} />
     </div>
   );
 };
