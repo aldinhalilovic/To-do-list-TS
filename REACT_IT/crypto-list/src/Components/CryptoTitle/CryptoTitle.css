@@ -1,6 +1,11 @@
 .crypto-title{
-    width: 600px;
+    width:100vw ;
+    height: 20vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+    color: #fa991c;
+    background-color: #1c768f;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }

@@ -1,37 +1,23 @@
 import React, { useState } from "react";
 import CryptoListItem from "../CryptoListItem/CryptoListItem";
+import CryptoTitle from "../CryptoTitle/CryptoTitle";
 import "./CryptoForm.css";
 
 const CryptoForm = () => {
-  const [cryptoItem, setCryptoItem] = useState({
-    id: 1,
-    name: "",
-    value: "",
-  });
-
-  const [nameValue, setNameValue] = useState({
-    id: cryptoItem.id,
-    name: "",
-    value: "",
-  });
+  const [cryptoItem, setCryptoItem] = useState({ name: "", value: "" });
+  const [nameValue, setNameValue] = useState([]);
+  const deleteItem = (id) => {
+    const newNameValue = nameValue.filter((el) => el.id !== id);
+    setNameValue(newNameValue);
+  };
+  let nextId = 0;
 
   return (
     <div className="crypto-form">
+      {/* <CryptoTitle /> */}
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          console.log(cryptoItem);
-          setNameValue((prev) => ({
-            ...prev,
-            name: cryptoItem.name,
-            value: +cryptoItem.value,
-          }));
-          setCryptoItem((prev) => ({
-            ...prev,
-            name: "",
-            value: +"",
-          }));
-          console.log(nameValue);
         }}
       >
         <div>
@@ -51,18 +37,41 @@ const CryptoForm = () => {
           <input
             type={"text"}
             placeholder="Value"
-            className="value"
-            value={+cryptoItem.value}
+            className="valuee"
+            value={cryptoItem.value}
             onChange={(e) =>
               setCryptoItem((prev) => ({ ...prev, value: e.target.value }))
             }
           ></input>
         </div>
-        <button type="submit" className="btn">
+        <button
+          type="submit"
+          className="btn"
+          onClick={() => {
+            setNameValue([
+              ...nameValue,
+              { id: nextId++, name: cryptoItem.name, value: cryptoItem.value },
+            ]);
+            setCryptoItem(() => ({
+              name: "",
+              value: "",
+            }));
+          }}
+        >
           Submit
         </button>
       </form>
-      <CryptoListItem name={nameValue.name} value={`${+nameValue.value}$`} />
+      <div>
+        {nameValue.map((el) => (
+          <span key={el.id++}>
+            <CryptoListItem
+              name={el.name}
+              value={`${el.value}$`}
+              deleteBtn={() => deleteItem(el.id)}
+            />
+          </span>
+        ))}
+      </div>
     </div>
   );
 };
