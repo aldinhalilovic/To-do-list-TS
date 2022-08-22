@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import CryptoListItem from "../CryptoListItem/CryptoListItem";
-import CryptoTitle from "../CryptoTitle/CryptoTitle";
 import "./CryptoForm.css";
 
 const CryptoForm = () => {
@@ -14,7 +13,6 @@ const CryptoForm = () => {
 
   return (
     <div className="crypto-form">
-      {/* <CryptoTitle /> */}
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -27,6 +25,7 @@ const CryptoForm = () => {
             placeholder="Add Crypto"
             className="namee"
             value={cryptoItem.name}
+            min={"1"}
             onChange={(e) =>
               setCryptoItem((prev) => ({
                 ...prev,
@@ -39,6 +38,7 @@ const CryptoForm = () => {
             placeholder="Value"
             className="valuee"
             value={cryptoItem.value}
+            min={"1"}
             onChange={(e) =>
               setCryptoItem((prev) => ({ ...prev, value: e.target.value }))
             }
@@ -48,6 +48,9 @@ const CryptoForm = () => {
           type="submit"
           className="btn"
           onClick={() => {
+            if (!cryptoItem.name || !cryptoItem.value) {
+              return;
+            }
             setNameValue([
               ...nameValue,
               { id: nextId++, name: cryptoItem.name, value: cryptoItem.value },
@@ -66,7 +69,7 @@ const CryptoForm = () => {
           <span key={el.id++}>
             <CryptoListItem
               name={el.name}
-              value={`${el.value}$`}
+              value={`${+el.value}$`}
               deleteBtn={() => deleteItem(el.id)}
             />
           </span>
