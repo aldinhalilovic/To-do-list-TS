@@ -4,16 +4,17 @@
     margin-top: 20px;
     margin-bottom: 20px;
     display: flex;
+    justify-content: space-around;
     align-items: center;
     color: black;
     background-color: #fbf3f2;
-    position: relative;
+    /* position: relative; */
     border-radius: 10px;
 }
 
 .name{
-    position: absolute;
-    left: 130px;
+    /* position: absolute;
+    left: 130px; */
     color: #fa991c;
     font-weight: 700;
     font-size: x-large;
@@ -21,16 +22,16 @@
 }
 
 .value{
-    position: absolute;
-    left: 380px;
+    /* position: absolute;
+    left: 380px; */
     color: #fa991c;
     font-weight: 700;
     font-size: x-large;
 }
 
 .delete{
-    position: absolute;
-    left: 650px;
+    /* position: absolute;
+    left: 650px; */
     width: 28px;
     height: 30px;
     font-weight: 600;

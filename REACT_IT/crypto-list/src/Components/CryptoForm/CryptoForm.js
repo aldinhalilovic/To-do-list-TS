@@ -1,15 +1,18 @@
 import React, { useState } from "react";
+import CryptoList from "../CryptoList/CryptoList";
 import CryptoListItem from "../CryptoListItem/CryptoListItem";
 import "./CryptoForm.css";
 
 const CryptoForm = () => {
   const [cryptoItem, setCryptoItem] = useState({ name: "", value: "" });
-  const [nameValue, setNameValue] = useState([]);
+  const [nameValue, setNameValue] = useState([
+    { name: "Bitcoin", value: "5655", id: 1 },
+  ]);
   const deleteItem = (id) => {
     const newNameValue = nameValue.filter((el) => el.id !== id);
     setNameValue(newNameValue);
   };
-  let nextId = 0;
+  let nextId = 1;
 
   return (
     <div className="crypto-form">
@@ -65,15 +68,7 @@ const CryptoForm = () => {
         </button>
       </form>
       <div>
-        {nameValue.map((el) => (
-          <span key={el.id++}>
-            <CryptoListItem
-              name={el.name}
-              value={`${+el.value}$`}
-              deleteBtn={() => deleteItem(el.id)}
-            />
-          </span>
-        ))}
+        <CryptoList cryptoItem={nameValue} deletebtn={(id) => deleteItem(id)} />
       </div>
     </div>
   );
