@@ -8,6 +8,7 @@
     align-items: center;
     color: black;
     background-color: #fbf3f2;
+    border: 5px solid #d7871f;
     /* position: relative; */
     border-radius: 10px;
 }

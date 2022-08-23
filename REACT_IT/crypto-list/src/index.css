@@ -11,6 +11,7 @@ body {
   font-family: 'PT Sans', sans-serif;;
   background-image: url("https://img.freepik.com/free-photo/cryptocurrency-coding-digital-blue-background-open-source-blockchain-concept_53876-124644.jpg?w=2000");
   background-size:cover;
+  background-attachment: fixed;
 }
 
 code {

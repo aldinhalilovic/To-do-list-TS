@@ -1,7 +1,20 @@
 import React, { useState } from "react";
 import "./CryptoListItem.css";
 
-const CryptoListItem = ({ name, value, deleteBtn }) => {
+const CryptoListItem = ({
+  name,
+  value,
+  hour,
+  day,
+  week,
+  market,
+  volume,
+  deleteBtn,
+  // activeIndex,
+  // setActiveIndex,
+  // showLessMore,
+  // setShowLessMore,
+}) => {
   const [showLessMore, setShowLessMore] = useState(false);
 
   return (
@@ -10,23 +23,16 @@ const CryptoListItem = ({ name, value, deleteBtn }) => {
         <h1 className="name">{name}</h1>
         <h1 className="value">{value}</h1>
         <button
-          onClick={() => setShowLessMore((prev) => !prev)}
           className="less-more"
+          onClick={() => setShowLessMore((prev) => !prev)}
         >
-          {!showLessMore ? "Show more" : "Show less"}
+          {showLessMore ? <span>Show less</span> : <span>Show More</span>}
         </button>
         <button onClick={deleteBtn} className="delete">
           X
         </button>
       </div>
-      {showLessMore && (
-        <div style={{ backgroundColor: "white" }}>
-          <p>
-            {" "}
-            {name} je trenutno {value}$
-          </p>
-        </div>
-      )}
+      {/* div za show more */}
     </div>
   );
 };
