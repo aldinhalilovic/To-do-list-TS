@@ -10,10 +10,6 @@ const CryptoListItem = ({
   market,
   volume,
   deleteBtn,
-  // activeIndex,
-  // setActiveIndex,
-  // showLessMore,
-  // setShowLessMore,
 }) => {
   const [showLessMore, setShowLessMore] = useState(false);
 
@@ -26,13 +22,24 @@ const CryptoListItem = ({
           className="less-more"
           onClick={() => setShowLessMore((prev) => !prev)}
         >
-          {showLessMore ? <span>Show less</span> : <span>Show More</span>}
+          {showLessMore ? "Show less" : "Show more"}
         </button>
         <button onClick={deleteBtn} className="delete">
           X
         </button>
       </div>
-      {/* div za show more */}
+      {showLessMore && (
+        <div className="more-infos">
+          <p>
+            <span>{name}</span> has value of <span>{value}</span> currently. In
+            relative to last hour, it went <span>{hour}%</span>. In past day, it
+            is <span>{day}%</span>, but for last week it is <span>{week}%</span>
+            . On market, currently this cryptovalue values for{" "}
+            <span>{market}</span>. Now is about <span>{volume}</span>
+            <span> {name}'s</span> in game.
+          </p>
+        </div>
+      )}
     </div>
   );
 };

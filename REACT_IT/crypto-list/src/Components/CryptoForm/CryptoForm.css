@@ -35,7 +35,10 @@
 .namee:focus {
     outline: 2px solid #032539;
 }
-
 .valuee:focus {
     outline: 2px solid #032539;
 }
+
+/* .valuee::placeholder {
+    padding-left: 90px;
+} */
