@@ -1,0 +1,81 @@
+[
+  {
+    "id": "1",
+    "model": "Golf 6",
+    "year": "2010.",
+    "engine": "1598cm",
+    "color": "silver",
+    "fuel": "petrol",
+    "transmision": "manuel",
+    "price": "9000",
+    "addionalExpenses": "0",
+    "tyres": false,
+    "image": "https://i.pinimg.com/originals/c1/85/38/c18538b60dfd0feb1dd1189e8d1a493d.jpg"
+  },
+
+  {
+    "id": "2",
+    "model": "Golf 7",
+    "year": "2017.",
+    "engine": "2003cm",
+    "color": "white",
+    "fuel": "petrol",
+    "addionalExpenses": "0",
+    "transmision": "automatic",
+    "price": "19000",
+    "tyres": false,
+    "image": "https://s3.amazonaws.com/www.autowise.com/wp-content/uploads/2015/09/30155128/volkswagen-golf-gti-clubsport-01-1024x683.jpg"
+  },
+  {
+    "id": "3",
+    "model": "Audi A3",
+    "year": "2015.",
+    "engine": "2003cm",
+    "color": "white",
+    "fuel": "petrol",
+    "addionalExpenses": "0",
+    "transmision": "automatic",
+    "price": "13000",
+    "tyres": false,
+    "image": "https://www.motorbiscuit.com/wp-content/uploads/2020/04/Large-2020-Audi-RS-3-Nardo-edition-7044-1024x683.jpg"
+  },
+  {
+    "id": "4",
+    "model": "Audi A4",
+    "year": "2014.",
+    "engine": "2003cm",
+    "addionalExpenses": "0",
+    "color": "white",
+    "fuel": "petrol",
+    "transmision": "automatic",
+    "price": "10000",
+    "tyres": false,
+    "image": "https://wallpapercave.com/wp/wp1849238.jpg"
+  },
+  {
+    "id": "5",
+    "model": "Audi A6",
+    "year": "2017.",
+    "engine": "3001cm",
+    "color": "red",
+    "addionalExpenses": "0",
+    "fuel": "petrol",
+    "transmision": "automatic",
+    "price": "21000",
+    "tyres": false,
+    "image": "https://alpinerentals.al/wp-content/uploads/CarRentalGallery/IMG_9457-1024x683.jpg"
+  },
+  {
+    "id": "6",
+    "model": "Bmw F10",
+    "year": "2015.",
+    "engine": "3002cm",
+    "addionalExpenses": "0",
+    "color": "black",
+    "fuel": "petrol",
+    "transmision": "automatic",
+    "price": "15000",
+    "tyres": false,
+    "image": "https://c4.wallpaperflare.com/wallpaper/395/913/209/bmw-m5-sedan-black-bmw-022-wallpaper-preview.jpg"
+  }
+]
